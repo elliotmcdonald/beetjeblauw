@@ -113,7 +113,7 @@ body.dark {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 40px;  /* Set this to the desired space from the edges */
+    padding: 50px;  /* Set this to the desired space from the edges */
     border-bottom: 1px solid #000;
 }
 
