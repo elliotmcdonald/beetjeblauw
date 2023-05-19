@@ -406,7 +406,7 @@ a:hover::after {
         align-items: center;
         flex-grow: 1;
         padding: 0px;
-        margin-top: 30px; /* Adjust the value as needed to lower the logo */
+        margin-top: 50px; /* Adjust the value as needed to lower the logo */
         border-bottom: 1px solid black;
         z-index: 100;
       }
