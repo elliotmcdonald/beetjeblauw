@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Beetje Blauw</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="keywords" content="beetje blauw">
+    <meta name="description" content="Art &amp; Design">
+    <meta name="og:title" content="Beetje Blauw">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="background">
+        <img src="background_nt.png" alt="background">
+    </div>
+    <header id="header">
+        <div id="description">
+            <p>
+                Art &amp; Design<br>
+                Barcelona
+            </p>
+        </div>
+        <div id="logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo_squiggle.png" alt="Logo">
+            </a>
+        </div>
+        <div id="links">
+            <p>
+                <a href="mailto:beetjeblauwstudio@gmail.com">Contact</a><br>
+                <a href="https://instagram.com/artofelliot" target="_blank">Instagram</a><br>
+            </p>
+        </div>
+    </header>
+    <section>
+      <h1>
+        Sophisticated <a href="designs.html" id="designs-link">Designs</a>, Een Beetje Blauw
+      </h1>
+    </section>      
+    <main>
+        <div class="column" id="left">
+          <div id="side">
+            <p>We specialize in creative, clear, and cohesive communications solutions that build memorable experiences.</p>
+          </div>
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-input-small" placeholder="Email" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" class="form-input-small" rows="2" placeholder="Question" required></textarea>
+            </div>
+            <div class="form-button-parent">
+                <button type="submit" class="form-button">Submit</button>
+              </div>
+          </form>
+          <p id="submit-message" class="terminal-message" style="display:none;">We will get back to you shortly.</p>
+        </div>
+        <div class="column" id="right">
+            <div id="row1">
+                <h2>Elevate your space from ordinary <br>to extraordinary</h2>
+            </div>
+            <div id="row2">
+                <p>Welcome to Beetje Blauw, a Barcelona-based design studio<br>
+                   born from a fusion of global creativity. Rooted in the rich heritage<br>
+                   of Cyprus and South Africa, and refined in the Netherlands,<br>
+                   we transform ordinary spaces into living canvases.
+                   <br>
+                   <br>
+                   Our name, Beetje Blauw, 'A Little Blue' in Dutch, echoes our love for cyanotype,<br> 
+                   a blue-tinted vintage
+                   photographic technique. We marry this with our diverse inspirations,<br> 
+                   spanning traditional painting methods to cutting-edge new media,<br> 
+                   crafting a unique aesthetic that’s distinctly ours.<br>
+                   <br>
+                   We're thrilled to present our latest collection:<br> 
+                   sophisticated wallpapers designed to redefine modern homes and businesses.<br> 
+                   Each design encapsulates a narrative of culture, artistry, and contemporary flair,<br> 
+                   offering more than decoration – it's a conversation starter, a statement piece.
+                    
+                </p>
+            </div>
+            <div id="break">
+              <img src="feeling_blue.png" alt="feeling blue">
+            </div>
+            <div id="row3">
+                <p>
+                    Meet Elliot and Kayla, the creative minds behind Beetje Blauw.<br>
+                    <br>
+
+                    Elliot, our South African, specialises in painting and new media.<br> 
+                    His work encapsulates vibrant portraits and intricate scenes, masterfully<br> 
+                    incorporating elements of machinery to challenge traditional artistic boundaries.<br>
+                    <br>
+
+                    Kayla, originating from Cyprus, brings a versatile skill set. She navigates the realms<br> 
+                    of painting, cyanotype, illustration, and print with refined precision,<br> 
+                    each piece a testament to her deep-rooted love for diverse art forms.<br>
+                    <br>
+
+                    Together, they embody Beetje Blauw, crafting clean, sophisticated designs<br> 
+                    that transform the everyday into extraordinary.
+
+                </p>
+            </div>
+        </div>
+      </main>
+      
+      <footer class="footer">
+        <div id="loghi">
+          <img src="loghi-02.png" alt="bottom-logo">
+      </div>
+        <div id="copyright">
+            <p>© 2023</p>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+         
+         $('div').css('opacity', '1');
+        });
+
+    </script>
+    <script>
+        (function () {
+          emailjs.init("4WP7kft4sTw3JgOsL"); // Replace with your user ID from EmailJS
+        })();
+      
+        const form = document.getElementById("contact-form");
+        const submitMessage = document.getElementById("submit-message");
+      
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+      
+          emailjs.sendForm("service_osyxpil", "template_2prcssi", form)
+            .then(
+              function (response) {
+                form.style.display = "none"; // Hide the contact form
+                submitMessage.style.display = "block"; // Show the custom message
+                setTimeout(function () {
+                  submitMessage.style.display = "none"; // Hide the custom message after 5 seconds
+                  form.style.display = "block"; // Show the contact form after 5 seconds
+                }, 5000);
+              },
+              function (error) {
+                alert("Failed to send email.\r\n Error: " + JSON.stringify(error));
+              }
+            );
+        });
+      </script>
+      
+</body>
+</html>
