@@ -70,17 +70,7 @@ section a:hover {
     cursor: pointer;
   }
   
-  @keyframes color-switch {
-    0% {
-      color: black;
-    }
-    50% {
-      color: rgb(0, 110, 184);
-    }
-    100% {
-      color: black;
-    }
-  }
+  
   
   #designs-link {
     animation: color-switch 4s infinite;
